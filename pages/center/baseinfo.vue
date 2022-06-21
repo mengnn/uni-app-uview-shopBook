@@ -25,7 +25,8 @@
 </template>
 
 <script>
-	import {authResigter} from '../../config/api.js';
+	import {updateUserInfo,userInfo} from '../../config/api.js';
+	import {userInfoUpdate} from '@/config/utils.js'
 	export default {
 		data() {
 			return {
@@ -54,8 +55,22 @@
 			submit() {
 				
 				console.log(this.baseinfo)
-				this.$refs.uForm.validate().then(res => {
-					uni.$u.toast("校验成功")
+				this.$refs.uForm.validate().then(async (res) => {
+					// 更新用户信息
+					await updateUserInfo(this.baseinfo)
+					// 刷新用户信息，更新vuex_user
+					// const userInfoRes = await userInfo();
+					// console.log(userInfoRes)
+					// this.$u.vuex("vuex_user",userInfoRes)
+					userInfoUpdate()
+					uni.$u.toast("更新成功！")
+					setTimeout(()=>{
+						uni.$u.route({
+							type:"reLaunch",
+							url:"pages/center/center"
+						})
+					},1500)
+					
 				}).catch(errors => {
 					uni.$u.toast('校验失败')
 				})

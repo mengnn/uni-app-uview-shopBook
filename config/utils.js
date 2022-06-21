@@ -1,6 +1,6 @@
 // 自定义工具
 // import 
-
+import {authLogin, userInfo} from '@/config/api.js';
 export const isLogin = () => {
 	const token = uni.getStorageSync('lifeData').vuex_token
 	if(!token) {
@@ -32,4 +32,12 @@ export const isLogin = () => {
 	} else {
 		return true
 	}
+}
+
+
+// 更新用户信息
+export const userInfoUpdate = async () => {
+	const userInfoRes = await userInfo();
+	// console.log(userInfoRes)
+	uni.$u.vuex("vuex_user",userInfoRes)
 }

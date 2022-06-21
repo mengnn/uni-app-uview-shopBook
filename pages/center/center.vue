@@ -26,7 +26,7 @@
 		
 		<view class="background-white u-m-t-20">
 			<u-cell-group>
-				<u-cell icon="reload  " title="退出登录" :isLink="true"></u-cell>
+				<u-cell icon="reload" title="退出登录" :isLink="true"></u-cell>
 			</u-cell-group>
 		</view>
 	</view>

@@ -21,3 +21,5 @@ export const authResigter = (params, config = {}) => http.post("/api/auth/regist
 // 用户相关
 
 export const userInfo = () => http.get("/api/user")  // 用户详情
+
+export const updateUserInfo = (params) => http.put("/api/user", params) // 更新用户信息

@@ -54,7 +54,7 @@ export default {
 			
 			// 获取用户信息
 			const userInfoRes = await userInfo();
-			// console.log(userInfoRes)
+			console.log(userInfoRes)
 			this.$u.vuex("vuex_user",userInfoRes)
 			
 			
@@ -78,7 +78,6 @@ export default {
 	}
 };
 </script>
-
 <style lang="scss" scoped>
 	.u-border-bottom {
 		margin-bottom: 20px!important;
