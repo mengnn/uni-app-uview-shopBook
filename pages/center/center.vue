@@ -26,7 +26,7 @@
 		
 		<view class="background-white u-m-t-20">
 			<u-cell-group>
-				<u-cell icon="reload" title="退出登录" :isLink="true"></u-cell>
+				<u-cell icon="reload" title="退出登录" :isLink="true" @click="logOut"></u-cell>
 			</u-cell-group>
 		</view>
 	</view>
@@ -34,6 +34,7 @@
 
 <script>
 	import {isLogin} from '../../config/utils.js';
+	import {authLogOut} from '../../config/api.js';
 	export default {
 		data() {
 			return {
@@ -55,11 +56,28 @@
 			// }
 			
 			// 调用自定义工具方法
-			// if (!isLogin()) return
+			if (!isLogin()) return
 			// console.log(123)
 		},
 		methods: {
-			
+			// 退出登录
+			async logOut(){
+				await authLogOut()
+				uni.$u.toast("退出登录！")
+				
+				setTimeout(()=>{
+					// 清楚vuex
+					this.$u.vuex("vuex_token",null)
+					this.$u.vuex("vuex_user",null)
+					// 跳转页面
+					uni.$u.route({
+						type:'reLaunch',
+						url:'pages/index/index'
+					})
+					
+				},1500)
+				
+			}
 		}
 	}
 </script>

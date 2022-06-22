@@ -16,6 +16,8 @@ export const authLogin = (params, config = {}) => http.post("/api/auth/login", p
 
 export const authResigter = (params, config = {}) => http.post("/api/auth/register", params, config) // 注册
 
+export const authLogOut = () => http.post("/api/auth/logout") // 退出登录
+
 
 
 // 用户相关
