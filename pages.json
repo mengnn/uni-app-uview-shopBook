@@ -19,7 +19,7 @@
             "path" : "pages/cart/cart",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "购物车",
                 "enablePullDownRefresh": false
             }
             
@@ -28,7 +28,7 @@
             "path" : "pages/goods/goods",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "商品",
                 "enablePullDownRefresh": false
             }
             
@@ -56,6 +56,15 @@
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "修改个人信息",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/goods/show",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "商品详情",
                 "enablePullDownRefresh": false
             }
             

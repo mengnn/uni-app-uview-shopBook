@@ -1,5 +1,5 @@
 <template>
-	<navigator>
+	<navigator :url="'/pages/goods/show?id=' + goods.id">
 		<u--image :showLoading="true" :src="goods.cover_url" width="100%" height="150px"></u--image>
 		<view class="u-line-1 title">{{goods.title}}</view>
 		<view class="goods-box">

@@ -18,6 +18,21 @@ export const authResigter = (params, config = {}) => http.post("/api/auth/regist
 
 export const authLogOut = () => http.post("/api/auth/logout") // 退出登录
 
+export const authOssToken = () => http.get("/api/auth/oss/token") // 获取osstoken 用于上传图片
+
+
+// 商品相关
+
+export const goodsInfo = (id) => http.get(`/api/goods/${id}`) // 商品详情
+
+export const goodsList = (params) => http.get('/api/goods',params) // 商品列表
+
+// 搜藏
+export const isCollect = (id) => http.post(`/api/collects/goods/${id}`) // 收藏
+
+// 购物车相关
+export const cardAdd = (params) => http.post("/api/carts",params) // 添加购物车
+export const cardCount = () => http.get("/api/carts") // 购物车商品数量
 
 
 // 用户相关
@@ -25,3 +40,5 @@ export const authLogOut = () => http.post("/api/auth/logout") // 退出登录
 export const userInfo = () => http.get("/api/user")  // 用户详情
 
 export const updateUserInfo = (params) => http.put("/api/user", params) // 更新用户信息
+
+export const updateAvatar = (params) => http.patch("/api/user/avatar", params) // 更新头像

@@ -2,7 +2,11 @@
 	<view class="center-box">
 		<view class="u-flex">
 			<view class="u-m-r-10">
-				<u-avatar :src="vuex_user.avatar_url" size="80"></u-avatar>
+				<!-- <u-avatar :src="vuex_user.avatar_url" size="80"></u-avatar> -->
+				<!-- 上传组件 -->
+				<oss-upload>
+					<u-avatar :src="vuex_user.avatar_url" size="80"></u-avatar>
+				</oss-upload>
 			</view>
 			<view class="u-flex-1">
 				<view class="u-font-18 u-p-b-20">{{vuex_user.name}}</view>
