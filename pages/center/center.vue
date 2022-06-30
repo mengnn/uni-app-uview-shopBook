@@ -24,7 +24,7 @@
 			<u-cell-group>
 				<u-cell icon="red-packet" title="所有订单" :isLink="true"></u-cell>
 				<u-cell icon="star" title="商品收藏" :isLink="true"></u-cell>
-				<u-cell icon="map" title="收货地址" :isLink="true"></u-cell>
+				<u-cell icon="map" title="收货地址" :isLink="true"  url="/pages/center/address"></u-cell>
 			</u-cell-group>
 		</view>
 		
@@ -81,7 +81,7 @@
 					
 				},1500)
 				
-			}
+			},
 		}
 	}
 </script>

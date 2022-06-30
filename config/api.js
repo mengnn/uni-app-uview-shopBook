@@ -33,7 +33,7 @@ export const isCollect = (id) => http.post(`/api/collects/goods/${id}`) // 收�
 // 购物车相关
 export const cardAdd = (params) => http.post("/api/carts",params) // 添加购物车
 export const cardCount = () => http.get("/api/carts") // 购物车商品数量
-
+export const cardList = () => http.get("/api/carts?include=goods") // 购物车列表
 
 // 用户相关
 
@@ -42,3 +42,7 @@ export const userInfo = () => http.get("/api/user")  // 用户详情
 export const updateUserInfo = (params) => http.put("/api/user", params) // 更新用户信息
 
 export const updateAvatar = (params) => http.patch("/api/user/avatar", params) // 更新头像
+
+
+// 地址相关
+export const addRessList = () => http.get("/api/address") // 地址列表

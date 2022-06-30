@@ -65,7 +65,7 @@
 				
 				
 			</view>
-			<view class="bottom-html card-html">
+			<view class="bottom-html card-html" @click="toCart">
 				<u-icon label="购物车" color="#606266" labelColor="#606266" size="28" labelSize="13px" name="shopping-cart" labelPos="bottom"></u-icon>
 				<u-badge bgColor="#F56C6C" max="99" :offset="offsetArr" :value="cardCount" :absolute="true"></u-badge>
 			</view>
@@ -152,12 +152,21 @@
 			},
 			// 获取商品数量
 			async getCardList(){
-				if (isLogin()){
+				const thisToken = this.vuex_token;
+				console.log(thisToken)
+				if (thisToken){
 					const cardListRes = await cardCount();
 					console.log(cardListRes)
 					this.cardCount = cardListRes.data.length
 				}
 				
+			},
+			// 跳转到购物车页面
+			toCart(){
+				uni.$u.route({
+					type:'switchTab',
+					url:'/pages/cart/cart'
+				})
 			}
 		}
 	}
