@@ -6,12 +6,12 @@
 		<view class="u-menu-wrap">
 			<scroll-view scroll-y scroll-with-animation class="u-tab-view menu-scroll-view" :scroll-top="scrollTop"
 			 :scroll-into-view="itemId">
-				<block  v-for="(item,index) in categories" :key="item.id + '-' + index">
+				<view  v-for="(item,index) in categories" :key="item.id + '-' + index">
 					<view v-for="(itemChildren,ci) in item.children" :key="itemChildren.id + '-' + ci" class="u-tab-item" :class="[current == itemChildren.id ? 'u-tab-item-active' : '']"
 					 @tap.stop="swichMenu(itemChildren.id)">
 						<text class="u-line-1">{{itemChildren.name}}</text>
 					</view>
-				</block>
+				</view>
 			</scroll-view>
 			<scroll-view :scroll-top="scrollRightTop" scroll-y scroll-with-animation class="right-box" @scrolltolower="scrollBotttom">
 				<view class="page-view">

@@ -1,7 +1,7 @@
 {
-    "name" : "uviewProject",
+    "name" : "图书商城",
     "appid" : "__UNI__C4719FC",
-    "description" : "",
+    "description" : "图书商城",
     "versionName" : "1.0.0",
     "versionCode" : "100",
     "transformPx" : false,
@@ -43,7 +43,14 @@
             /* ios打包配置 */
             "ios" : {},
             /* SDK配置 */
-            "sdkConfigs" : {}
+            "sdkConfigs" : {
+                "ad" : {}
+            },
+            "icons" : {
+                "android" : {
+                    "hdpi" : ""
+                }
+            }
         }
     },
     /* 快应用特有相关 */
@@ -52,7 +59,8 @@
     "mp-weixin" : {
         "appid" : "",
         "setting" : {
-            "urlCheck" : false
+            "urlCheck" : false,
+            "es6" : true
         },
         "usingComponents" : true
     },
@@ -68,5 +76,16 @@
     "uniStatistics" : {
         "enable" : false
     },
-    "vueVersion" : "2"
+    "vueVersion" : "2",
+    "h5" : {
+        "title" : "图书商城",
+        "router" : {
+            "mode" : "history"
+        },
+        "optimization" : {
+            "treeShaking" : {
+                "enable" : true
+            }
+        }
+    }
 }
